@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  div
+    h1 Air Travel Calculator
+    
+    form(action="", method="post")
+      p
+        label Departure City <br />
+          select(name="departure_city")
+            option(disabled) Choose a City
+            option(value="chicago") Chicago
+            option(value="los_angeles") Los Angeles
+            option(value="new_york") New York
+      p
+        label Arrival City <br />
+          select(name="arrival_city")
+            option(disabled) Choose a City
+            option(value="chicago") Chicago
+            option(value="los_angeles") Los Angeles
+            option(value="new_york") New York
+      p
+        label Number of Checked Bags ($25/Bag) <br />
+          select(name="checked_bags")
+            option(value="0") 0
+            option(value="25") 25
+            option(value="50") 50
+            option(value="75") 75
+      p
+        label Class <br />
+          select(name="cabin_class")
+            option(value="0") Coach
+            option(value="200") Business (+ $200)
+            option(value="500") First (+ $500)
+      p
+        label Wifi($12)
+          input(type="checkbox" name="wifi") 
+      p
+        label Promo Code
+          input(type="text" name="promo_code")
+      button(type="submit") Calculate Air Fare
+    h2(id="result") #{result}
+    
